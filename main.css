@@ -1,49 +1,113 @@
+@font-face {
+    font-family: 'TitilliumWeb-Regular';
+    src: url(assets/fonts/TitilliumWeb-Regular.ttf);
+}
+
 body {
-    margin: 0;
+    font-family: 'TitilliumWeb-Regular';
     padding: 0;
-    background-color: #17181B;
+    margin: 0;
 }
 
-nav {
-    /* border: 1px black solid;  */
-    display: flex;
-    width: 100%;
-    justify-content: flex-end;
-    background-color: transparent;
-    position: fixed;
+#top_nav {
+    margin: auto;
+    width: 1000px;
+    display: grid;
+    grid-template-columns: 5fr 1fr 1fr 1fr;
+    padding: 20px;
+    box-sizing: border-box;
+    /* border: black 1px solid; */
+    background-color: rgba(17, 17, 17);
+    color: white;
 }
 
-nav a{
-    border: 1px #3c4043 solid;
-    border-radius: 50%;
-    height: 35px;
-    width: 35px;
-    text-align: center;
-    margin-right: 10px;
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #202124;
-    color: cyan;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 10px;
-    font-style: oblique;
-    text-decoration: none;
-}
-
-nav a:hover {
-    background-color: cornflowerblue;
+.top_nav_menu a:hover {
+    color: goldenrod;
+    transition: .5s;
     cursor: pointer;
 }
 
-a:active {
-    transform: translateY(2px);
-  }
+.title {
+    font-weight: 900;
+    cursor: default;
+}
 
-main {
-    height: 2000px;
-    width: 80%;
-    margin: auto;
-    border: white 1px solid;
+#side_nav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: rgba(17, 17, 17);
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+  
+.side_nav_menu {
+    padding: 8px 8px 8px 8px;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+    text-align: center;
+}
+
+#side_nav hr {
+    color: white;
+    width: 100%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+
+}
+  
+#close_sidenav {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    color: white;
+}
+
+#side_nav .title {
+    padding: 20px 20px 20px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
+
+.side_nav_menu:hover {
+    color: goldenrod;
+    transition: .5s;
+    cursor: pointer;
+}
+
+#open_sidenav {
+    display: none;
+}
+
+footer {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    background-color: rgba(17, 17, 17);
+}
+
+  
+@media screen and (max-width: 999px) {
+    #open_sidenav {
+        display: block
+    }
+    .top_nav_menu {
+        display: none;
+    }
+    #top_nav {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 }
